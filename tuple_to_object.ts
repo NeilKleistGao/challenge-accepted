@@ -22,7 +22,7 @@
 
 /* _____________ 你的代码 _____________ */
 
-type TupleToObject<T extends readonly any[]> = {
+type TupleToObject<T extends readonly PropertyKey[]> = {
   [key in T[number]]: key
 }
 
