@@ -25,7 +25,6 @@ type MyParameters<T extends (...args: any[]) => any> =
   T extends ((p: infer P) => any) ? [P] :
   T extends ((p: infer P, ...rest: infer R) => any) ? [P, ...MyParameters<(...args: R)=>any>] : [never]
 
-type t = MyParameters<typeof baz>
 /* _____________ 测试用例 _____________ */
 import type { Equal, Expect } from '@type-challenges/utils'
 
